@@ -64,7 +64,7 @@ void Graph::findInnerPairsSteps(int current, bool visited[], int& steps, int sta
 			}
 		}
 		else { 
-			steps--;
+
 			break; 
 		}
 	}
