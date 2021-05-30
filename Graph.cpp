@@ -42,10 +42,9 @@ void Graph::findPairs() {
 void Graph::findInnerPairs(int current_, bool visited[]) {
 	visited[current_] = true;
 	int start = current_;
-	int current, steps;
+	int current, steps = 0;
 	for (int i = 0; i < vertexCount; i++) {
 		current = current_;
-		steps = 0;
 		if (edgeExists(current, i) && !visited[i]) {
 			std::cout << "V" << start << ", V" << i << std::endl;
 			current = i;
@@ -63,10 +62,7 @@ void Graph::findInnerPairsSteps(int current, bool visited[], int& steps, int sta
 				findInnerPairsSteps(i, visited, ++steps, start);
 			}
 		}
-		else { 
-
-			break; 
-		}
+		else { break; }
 	}
 	steps--;
 }
